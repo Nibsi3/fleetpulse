@@ -1,0 +1,201 @@
+<svg width="860" height="170" viewBox="0 0 860 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="rp">
+      <rect x="282" y="0" width="578" height="170"/>
+    </clipPath>
+    <style>
+      .live  { animation: pulse 1.5s ease-in-out infinite; }
+      .ma    { animation: blink 5s ease-in-out 0s   infinite; }
+      .mb    { animation: blink 5s ease-in-out 1.6s infinite; }
+      .mc    { animation: blink 5s ease-in-out 3.2s infinite; }
+      .md    { animation: blink 5s ease-in-out 4.8s infinite; }
+      @keyframes pulse {
+        0%,100% { opacity:1; }
+        50%     { opacity:0.15; }
+      }
+      @keyframes blink {
+        0%,78%,100% { opacity:1; }
+        84%         { opacity:0.2; }
+        89%         { opacity:0.9; }
+        93%         { opacity:0.2; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="170" fill="#060c18" rx="13"/>
+
+  <!-- Subtle grid -->
+  <line x1="0"   y1="57"  x2="860" y2="57"  stroke="#0c1829" stroke-width="1"/>
+  <line x1="0"   y1="113" x2="860" y2="113" stroke="#0c1829" stroke-width="1"/>
+  <line x1="282" y1="0"   x2="282" y2="170" stroke="#0c1829" stroke-width="1.5"/>
+
+  <!-- ── LEFT PANEL: Branding ── -->
+  <rect x="22" y="34" width="3" height="102" fill="#3b82f6" rx="2"/>
+
+  <text x="38" y="66"
+        font-family="'Courier New',Courier,monospace"
+        font-size="25" font-weight="bold"
+        fill="#3b82f6" letter-spacing="4">FLEETPULSE</text>
+
+  <text x="38" y="84"
+        font-family="'Courier New',Courier,monospace"
+        font-size="9" fill="#2d4a6b" letter-spacing="2.5">IoT FLEET TELEMETRY PLATFORM</text>
+
+  <line x1="38" y1="93" x2="264" y2="93" stroke="#0f1f35" stroke-width="1"/>
+
+  <!-- Stack lines -->
+  <text x="38" y="109" font-family="'Courier New',Courier,monospace" font-size="9.5" fill="#2563eb" letter-spacing="1">C#  ·  ASP.NET CORE 8</text>
+  <text x="38" y="124" font-family="'Courier New',Courier,monospace" font-size="9.5" fill="#2563eb" letter-spacing="1">REACT  ·  TYPESCRIPT</text>
+  <text x="38" y="139" font-family="'Courier New',Courier,monospace" font-size="9.5" fill="#2563eb" letter-spacing="1">SQLITE  ·  EF CORE</text>
+
+  <!-- LIVE pill -->
+  <rect x="33" y="149" width="120" height="14" fill="#052e16" rx="7"/>
+  <circle cx="44" cy="156" r="4" fill="#22c55e" class="live"/>
+  <text x="52" y="160"
+        font-family="'Courier New',Courier,monospace"
+        font-size="8.5" fill="#22c55e" letter-spacing="2">LIVE · ZA-SOUTH-1</text>
+
+  <!-- ── RIGHT PANEL: Road + Truck + Metrics ── -->
+  <g clip-path="url(#rp)">
+    <rect x="282" y="0" width="578" height="170" fill="#040911"/>
+
+    <!-- Road -->
+    <rect x="282" y="118" width="578" height="52" fill="#080f1e"/>
+    <line x1="282" y1="117" x2="860" y2="117" stroke="#1a2d4a" stroke-width="2"/>
+
+    <!-- Road dashes -->
+    <rect x="300" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="352" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="404" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="456" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="508" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="560" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="612" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="664" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="716" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="768" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+    <rect x="820" y="140" width="28" height="3" fill="#112035" rx="1.5"/>
+
+    <!-- Route trace line -->
+    <line x1="282" y1="98" x2="850" y2="98" stroke="#0f2040" stroke-width="1" stroke-dasharray="8,5"/>
+
+    <!-- Destination ping -->
+    <circle cx="840" cy="98" r="4" fill="#22c55e">
+      <animate attributeName="r"       values="4;7;4"     dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ── TRUCK (SMIL animateTransform) ── -->
+    <g>
+      <!-- Trailer -->
+      <rect x="0" y="0" width="74" height="44" fill="#1e3a8a" rx="2">
+        <animateTransform attributeName="transform" type="translate" from="-120,63" to="870,63" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Trailer detail line -->
+      <rect x="0" y="0" width="74" height="7" fill="#2563eb" opacity="0.25">
+        <animateTransform attributeName="transform" type="translate" from="-120,63" to="870,63" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Trailer text -->
+      <text x="0" y="0"
+            font-family="'Courier New',Courier,monospace"
+            font-size="8" fill="#3b82f6" letter-spacing="3" opacity="0.7"
+            text-anchor="middle">
+        <animateTransform attributeName="transform" type="translate" from="-83,87" to="907,87" dur="8s" repeatCount="indefinite"/>
+        FLEET
+      </text>
+      <!-- Cab body -->
+      <rect x="0" y="0" width="30" height="39" fill="#1d4ed8" rx="2">
+        <animateTransform attributeName="transform" type="translate" from="-42,68" to="948,68" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Windshield -->
+      <rect x="0" y="0" width="16" height="15" fill="#bfdbfe" rx="1" opacity="0.55">
+        <animateTransform attributeName="transform" type="translate" from="-34,72" to="956,72" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Headlight -->
+      <rect x="0" y="0" width="4" height="7" fill="#fbbf24" rx="1">
+        <animateTransform attributeName="transform" type="translate" from="-14,90" to="976,90" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Exhaust pipe -->
+      <rect x="0" y="0" width="4" height="12" fill="#1e2d40" rx="2">
+        <animateTransform attributeName="transform" type="translate" from="-42,51" to="948,51" dur="8s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- Wheels (4 of them) -->
+      <circle cx="0" cy="0" r="9" fill="#050b14" stroke="#3b82f6" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="translate" from="-104,118" to="886,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="3.5" fill="#2563eb">
+        <animateTransform attributeName="transform" type="translate" from="-104,118" to="886,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="9" fill="#050b14" stroke="#3b82f6" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="translate" from="-66,118" to="924,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="3.5" fill="#2563eb">
+        <animateTransform attributeName="transform" type="translate" from="-66,118" to="924,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="8.5" fill="#050b14" stroke="#1d4ed8" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="translate" from="-28,118" to="962,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="3" fill="#1d4ed8">
+        <animateTransform attributeName="transform" type="translate" from="-28,118" to="962,118" dur="8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- GPS ping rings (travel with the truck, emitted from top-center) -->
+      <circle cx="0" cy="0" r="0" fill="none" stroke="#22d3ee" stroke-width="1.5">
+        <animateTransform attributeName="transform" type="translate" from="-83,53" to="907,53" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="r"       from="2" to="32" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.85" to="0" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="0" fill="none" stroke="#22d3ee" stroke-width="1">
+        <animateTransform attributeName="transform" type="translate" from="-83,53" to="907,53" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="r"       from="2" to="32" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.6" to="0" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- GPS dot -->
+      <circle cx="0" cy="0" r="3" fill="#22d3ee" opacity="0.95">
+        <animateTransform attributeName="transform" type="translate" from="-83,53" to="907,53" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- ── DATA METRIC CARDS ── -->
+    <!-- SPEED -->
+    <rect x="476" y="13" width="84" height="54" fill="#040911" stroke="#1a2d4a" stroke-width="1.5" rx="6"/>
+    <text x="518" y="32" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="8.5" fill="#2d4a6b" letter-spacing="2">SPEED</text>
+    <text x="518" y="55" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="18" font-weight="bold" fill="#60a5fa" class="ma">82km/h</text>
+
+    <!-- FUEL -->
+    <rect x="570" y="13" width="84" height="54" fill="#040911" stroke="#1a2d4a" stroke-width="1.5" rx="6"/>
+    <text x="612" y="32" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="8.5" fill="#2d4a6b" letter-spacing="2">FUEL</text>
+    <text x="612" y="55" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="18" font-weight="bold" fill="#f59e0b" class="mb">71%</text>
+
+    <!-- ALERTS -->
+    <rect x="664" y="13" width="84" height="54" fill="#040911" stroke="#1a2d4a" stroke-width="1.5" rx="6"/>
+    <text x="706" y="32" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="8.5" fill="#2d4a6b" letter-spacing="2">ALERTS</text>
+    <text x="706" y="55" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="18" font-weight="bold" fill="#f87171" class="mc">3 HIGH</text>
+
+    <!-- FLEET -->
+    <rect x="758" y="13" width="84" height="54" fill="#040911" stroke="#1a2d4a" stroke-width="1.5" rx="6"/>
+    <text x="800" y="32" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="8.5" fill="#2d4a6b" letter-spacing="2">FLEET</text>
+    <text x="800" y="55" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace"
+          font-size="18" font-weight="bold" fill="#a78bfa" class="md">24 VEH</text>
+  </g>
+
+  <!-- Outer border -->
+  <rect width="860" height="170" fill="none" stroke="#0f1f35" stroke-width="1.5" rx="13"/>
+</svg>
