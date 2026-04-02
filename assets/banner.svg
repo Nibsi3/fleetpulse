@@ -93,82 +93,113 @@
     <rect x="636" y="134" width="22" height="3" fill="#122030" rx="1.5"/>
     <rect x="678" y="134" width="22" height="3" fill="#122030" rx="1.5"/>
 
-    <!-- ══ CUTE TRUCK (CSS animation, all parts in one group) ══ -->
+    <!-- ══ PIXEL TRUCK (6px grid, CSS drive animation) ══ -->
     <g class="truck">
+      <!-- p=6. Trailer: x0-96 y0-48. Cab: x96-138 y0-48. Wheels: y48-72 -->
 
-      <!-- Floating tech badges (travel with truck) -->
-      <rect x="-4"  y="-60" width="96"  height="18" fill="#3b0764" rx="9"/>
-      <text x="44"  y="-48" text-anchor="middle"
-            font-family="'Courier New',Courier,monospace"
-            font-size="8.5" fill="#d8b4fe">C# · ASP.NET 8</text>
-      <rect x="4"   y="-38" width="88"  height="18" fill="#134e4a" rx="9"/>
-      <text x="48"  y="-26" text-anchor="middle"
-            font-family="'Courier New',Courier,monospace"
-            font-size="8.5" fill="#5eead4">BackgroundSvc</text>
+      <!-- PIXEL EXHAUST STACK (left of cab top) -->
+      <rect x="96" y="-18" width="6" height="18" fill="#1e293b"/>
+      <!-- Pixel smoke puffs -->
+      <rect x="90" y="-30" width="12" height="6"  fill="#232f3e" opacity="0.75"/>
+      <rect x="84" y="-36" width="12" height="6"  fill="#1a2535" opacity="0.5"/>
+      <rect x="90" y="-42" width="6"  height="6"  fill="#1a2535" opacity="0.25"/>
+      <rect x="84" y="-48" width="6"  height="6"  fill="#1a2535" opacity="0.1"/>
 
-      <!-- GPS antenna -->
-      <rect x="100" y="-24" width="3" height="24" fill="#1e293b" rx="1.5"/>
-      <circle cx="101.5" cy="-25" r="3.5" fill="#22d3ee" class="p1"/>
-      <!-- GPS ping (SMIL on r + opacity, safe inside CSS-animated group) -->
-      <circle cx="101.5" cy="-25" r="0" fill="none" stroke="#22d3ee" stroke-width="1.5">
-        <animate attributeName="r"       from="4" to="28" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" from="0.9" to="0"  dur="2.2s" repeatCount="indefinite"/>
+      <!-- GPS ANTENNA (pixel post + beacon) -->
+      <rect x="120" y="-18" width="6"  height="18" fill="#1e293b"/>
+      <rect x="114" y="-24" width="18" height="6"  fill="#22d3ee" class="p1"/>
+      <!-- Ping rings (smooth circles for signal look) -->
+      <circle cx="123" cy="-21" r="0" fill="none" stroke="#22d3ee" stroke-width="1.5">
+        <animate attributeName="r"       from="5" to="28" dur="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.9" to="0" dur="2.2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="101.5" cy="-25" r="0" fill="none" stroke="#22d3ee" stroke-width="1">
-        <animate attributeName="r"       from="4" to="28" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" from="0.65" to="0" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
+      <circle cx="123" cy="-21" r="0" fill="none" stroke="#22d3ee" stroke-width="1">
+        <animate attributeName="r"       from="5" to="28" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.6" to="0" dur="2.2s" begin="1.1s" repeatCount="indefinite"/>
       </circle>
 
-      <!-- Exhaust pipe + puffs -->
-      <rect x="1"  y="-15" width="4" height="15" fill="#1e293b" rx="2"/>
-      <circle cx="3"  cy="-17" r="5"   fill="#1a2535" opacity="0.6"/>
-      <circle cx="5"  cy="-25" r="3.5" fill="#1a2535" opacity="0.35"/>
-      <circle cx="3"  cy="-31" r="2"   fill="#1a2535" opacity="0.15"/>
+      <!-- ═══ TRAILER BODY (pixel blocks) ═══ -->
+      <!-- Outline top -->
+      <rect x="0"  y="0"  width="96" height="6"  fill="#060c16"/>
+      <!-- Outline left -->
+      <rect x="0"  y="0"  width="6"  height="48" fill="#060c16"/>
+      <!-- Outline right (trailer end) -->
+      <rect x="90" y="0"  width="6"  height="48" fill="#060c16"/>
+      <!-- Outline bottom -->
+      <rect x="0"  y="42" width="96" height="6"  fill="#060c16"/>
+      <!-- Top accent stripe -->
+      <rect x="6"  y="6"  width="84" height="6"  fill="#3b82f6"/>
+      <!-- Main body upper half -->
+      <rect x="6"  y="12" width="84" height="12" fill="#1e3a8a"/>
+      <!-- Mid pixel detail line -->
+      <rect x="6"  y="24" width="84" height="6"  fill="#172554"/>
+      <!-- Main body lower half -->
+      <rect x="6"  y="30" width="84" height="12" fill="#1e3a8a"/>
+      <!-- Pixel rivet dots on trailer -->
+      <rect x="12" y="18" width="6"  height="6"  fill="#2563eb" opacity="0.5"/>
+      <rect x="42" y="18" width="6"  height="6"  fill="#2563eb" opacity="0.5"/>
+      <rect x="72" y="18" width="6"  height="6"  fill="#2563eb" opacity="0.5"/>
+      <!-- Pulse indicator dot on trailer -->
+      <rect x="42" y="30" width="6"  height="6"  fill="#60a5fa" class="p2"/>
 
-      <!-- TRAILER (cargo box) -->
-      <rect x="0"  y="0" width="86" height="52" fill="#1e3a8a" rx="12"/>
-      <!-- Top stripe -->
-      <rect x="0"  y="0" width="86" height="12" fill="#2563eb" rx="12"/>
-      <rect x="0"  y="6" width="86" height="6"  fill="#2563eb"/>
-      <!-- Cargo label -->
-      <text x="43" y="34" text-anchor="middle"
-            font-family="'Courier New',Courier,monospace"
-            font-size="9" font-weight="bold" fill="#93c5fd" letter-spacing="3">DATA</text>
-      <!-- Tiny pulse dot -->
-      <circle cx="43" cy="44" r="3" fill="#3b82f6" class="p2"/>
+      <!-- ═══ HITCH ═══ -->
+      <rect x="90" y="18" width="6"  height="12" fill="#0c1828"/>
 
-      <!-- Hitch -->
-      <rect x="86" y="16" width="8" height="20" fill="#172554" rx="3"/>
+      <!-- ═══ CAB BODY (pixel blocks) ═══ -->
+      <!-- Outline top -->
+      <rect x="96"  y="0"  width="42" height="6"  fill="#060c16"/>
+      <!-- Outline right -->
+      <rect x="132" y="0"  width="6"  height="48" fill="#060c16"/>
+      <!-- Outline bottom -->
+      <rect x="96"  y="42" width="42" height="6"  fill="#060c16"/>
+      <!-- Cab body fill -->
+      <rect x="102" y="6"  width="30" height="36" fill="#2563eb"/>
+      <!-- Top accent matches trailer -->
+      <rect x="102" y="6"  width="30" height="6"  fill="#3b82f6"/>
 
-      <!-- CAB -->
-      <rect x="92" y="8"  width="38" height="44" fill="#2563eb" rx="12"/>
-      <!-- Windshield -->
-      <rect x="100" y="13" width="22" height="21" fill="#bfdbfe" rx="6" opacity="0.7"/>
-      <!-- Glare -->
-      <rect x="102" y="14" width="5"  height="10" fill="white"  rx="2.5" opacity="0.38"/>
+      <!-- WINDSHIELD (pixel panes) -->
+      <rect x="102" y="12" width="18" height="18" fill="#93c5fd"/>
+      <!-- Glare pixel -->
+      <rect x="102" y="12" width="6"  height="12" fill="#dbeafe" opacity="0.55"/>
+      <!-- Window divider -->
+      <rect x="114" y="12" width="6"  height="18" fill="#2563eb" opacity="0.4"/>
 
-      <!-- CUTE EYE HEADLIGHT -->
-      <circle cx="129" cy="38" r="7.5" fill="#fbbf24"/>
-      <circle cx="130" cy="39" r="3"   fill="#78350f"/>
-      <circle cx="127" cy="36" r="1.8" fill="#fef3c7" opacity="0.65"/>
-      <!-- Glow beam -->
-      <ellipse cx="137" cy="38" rx="10" ry="5" fill="#fbbf24" opacity="0.13"/>
+      <!-- PIXEL HEADLIGHT EYE -->
+      <rect x="126" y="24" width="12" height="12" fill="#fbbf24"/>
+      <!-- Pupil (bottom half dark) -->
+      <rect x="126" y="30" width="12" height="6"  fill="#78350f"/>
+      <!-- Shine pixel -->
+      <rect x="126" y="24" width="6"  height="6"  fill="#fef9c3" opacity="0.75"/>
+      <!-- Headlight neon beam (soft glow) -->
+      <ellipse cx="141" cy="30" rx="9" ry="5" fill="#fbbf24" opacity="0.18"/>
 
-      <!-- WHEELS -->
-      <circle cx="114" cy="54" r="12" fill="#0a1120" stroke="#60a5fa" stroke-width="2.5"/>
-      <circle cx="114" cy="54" r="5"  fill="#3b82f6"/>
-      <line x1="114" y1="43" x2="114" y2="65" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
-      <line x1="103" y1="54" x2="125" y2="54" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+      <!-- ═══ PIXEL WHEELS ═══ -->
+      <!-- Rear wheel 1 (center ~x18 y60) -->
+      <rect x="6"  y="48" width="24" height="6"  fill="#060c16"/>
+      <rect x="0"  y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="30" y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="6"  y="66" width="24" height="6"  fill="#060c16"/>
+      <rect x="6"  y="54" width="24" height="12" fill="#0a1120"/>
+      <rect x="12" y="54" width="12" height="12" fill="#1d4ed8"/>
+      <rect x="15" y="57" width="6"  height="6"  fill="#60a5fa"/>
 
-      <circle cx="22"  cy="54" r="12" fill="#0a1120" stroke="#3b82f6" stroke-width="2.5"/>
-      <circle cx="22"  cy="54" r="5"  fill="#1d4ed8"/>
-      <line x1="22"  y1="43" x2="22"  y2="65" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-      <line x1="11"  y1="54" x2="33"  y2="54" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
+      <!-- Rear wheel 2 (center ~x54 y60) -->
+      <rect x="42" y="48" width="24" height="6"  fill="#060c16"/>
+      <rect x="36" y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="66" y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="42" y="66" width="24" height="6"  fill="#060c16"/>
+      <rect x="42" y="54" width="24" height="12" fill="#0a1120"/>
+      <rect x="48" y="54" width="12" height="12" fill="#1d4ed8"/>
+      <rect x="51" y="57" width="6"  height="6"  fill="#60a5fa"/>
 
-      <circle cx="60"  cy="54" r="12" fill="#0a1120" stroke="#3b82f6" stroke-width="2.5"/>
-      <circle cx="60"  cy="54" r="5"  fill="#1d4ed8"/>
-      <line x1="60"  y1="43" x2="60"  y2="65" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-      <line x1="49"  y1="54" x2="71"  y2="54" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
+      <!-- Front wheel (center ~x114 y60) -->
+      <rect x="102" y="48" width="24" height="6"  fill="#060c16"/>
+      <rect x="96"  y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="126" y="54" width="6"  height="12" fill="#060c16"/>
+      <rect x="102" y="66" width="24" height="6"  fill="#060c16"/>
+      <rect x="102" y="54" width="24" height="12" fill="#0a1120"/>
+      <rect x="108" y="54" width="12" height="12" fill="#3b82f6"/>
+      <rect x="111" y="57" width="6"  height="6"  fill="#93c5fd"/>
     </g>
   </g>
 
